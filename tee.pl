@@ -33,11 +33,11 @@ if ($opts{'a'}) {
     $gobbler = '>>';
 }
 
-open(my $fn, $gobbler, $filename);
+open(my $fh, $gobbler, $filename);
 my $line;
 foreach $line (<STDIN>) {
     chomp($line);
     print "$line\n";
-    print $fn "$line\n";
+    print $fh "$line\n";
 }
-close($fn);
+close($fh);
